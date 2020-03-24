@@ -24,7 +24,7 @@ This is the executable that injects the library into the newly created Firefox p
 All code is written in C and can be built with MinGW. To compile you will likely need to use:
 
 ```
-$ make Makefile clean all
+$ make clean all
 ```
 
 The resulting binaries will be in the `build` directory.
