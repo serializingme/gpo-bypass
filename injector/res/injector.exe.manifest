@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<asmv1:assembly xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3"
+        xmlns:win2005="http://schemas.microsoft.com/SMI/2005/WindowsSettings" xmlns:win2016="http://schemas.microsoft.com/SMI/2016/WindowsSettings" manifestVersion="1.0">
+    <asmv1:assemblyIdentity version="1.0.0.0" processorArchitecture="*" name="SerializingMe.GPOBypass.Injector" type="win32" />
+    <asmv1:description>GPO Bypass DLL injector.</asmv1:description>
+
+    <asmv1:dependency>
+        <asmv1:dependentAssembly>
+            <asmv1:assemblyIdentity type="win32" name="Microsoft.Windows.Common-Controls" version="6.0.0.0" processorArchitecture="*" publicKeyToken="6595b64144ccf1df" language="*" />
+        </asmv1:dependentAssembly>
+    </asmv1:dependency>
+
+    <asmv2:trustInfo >
+        <asmv2:security>
+            <asmv3:requestedPrivileges>
+                <asmv3:requestedExecutionLevel level="asInvoker" uiAccess="false" />
+            </asmv3:requestedPrivileges>
+        </asmv2:security>
+    </asmv2:trustInfo>
+
+    <asmv3:application>
+        <asmv3:windowsSettings>
+            <win2016:dpiAwareness>PerMonitorV2</win2016:dpiAwareness>
+            <win2005:dpiAware>True/PM</win2005:dpiAware>
+        </asmv3:windowsSettings>
+    </asmv3:application>
+
+</asmv1:assembly>

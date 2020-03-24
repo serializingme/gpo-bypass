@@ -1,0 +1,5 @@
+.vscode
+common/build
+library/build
+injector/build
+build
