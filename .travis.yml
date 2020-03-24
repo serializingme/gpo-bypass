@@ -1,0 +1,10 @@
+language: c
+
+addons:
+  apt:
+    packages:
+      build-essential
+      gcc-mingw-w64-x86-64
+
+script:
+  - make clean all
