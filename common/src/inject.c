@@ -18,7 +18,6 @@
  */
 #include <tchar.h>
 #include <windows.h>
-#include <strsafe.h>
 
 #include "helper.h"
 #include "inject.h"
