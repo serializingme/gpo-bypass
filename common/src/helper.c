@@ -55,9 +55,9 @@ BOOL GetSectionBounds(ULONGLONG module, ULONGLONG address, PULONGLONG scLowerAdd
         return FALSE;
     }
 
-	PIMAGE_SECTION_HEADER scHeader = MAKEPTR(PIMAGE_SECTION_HEADER, ntHeader, sizeof(IMAGE_NT_HEADERS));
-    
-	for (int index = 0; index < ntHeader->FileHeader.NumberOfSections; ++index) {
+    PIMAGE_SECTION_HEADER scHeader = MAKEPTR(PIMAGE_SECTION_HEADER, ntHeader, sizeof(IMAGE_NT_HEADERS));
+
+    for (int index = 0; index < ntHeader->FileHeader.NumberOfSections; ++index) {
         ULONGLONG lowerAddress = MAKEPTR(ULONGLONG, dosHeader, scHeader->VirtualAddress);
         ULONGLONG upperAddress = MAKEPTR(ULONGLONG, lowerAddress, scHeader->Misc.VirtualSize);
 
@@ -67,8 +67,8 @@ BOOL GetSectionBounds(ULONGLONG module, ULONGLONG address, PULONGLONG scLowerAdd
 
             return TRUE;
         }
-        
-		scHeader = MAKEPTR(PIMAGE_SECTION_HEADER, scHeader, sizeof(IMAGE_SECTION_HEADER));
+
+        scHeader = MAKEPTR(PIMAGE_SECTION_HEADER, scHeader, sizeof(IMAGE_SECTION_HEADER));
     }
 
     return FALSE;

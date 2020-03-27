@@ -1,4 +1,4 @@
-    /*
+/*
  * Copyright (C) 2020 Duarte Silva
  *
  * This file is part of GPO Bypass.
@@ -37,6 +37,8 @@ BOOL InjectLibrary(HANDLE process, LPTSTR libraryPath) {
     BOOL result = TRUE;
     ULONGLONG kernel32dllAddress;
     ULONGLONG loadLibraryAddress;
+    LPVOID libraryPathAddress;
+    HANDLE remoteThread;
 
     // TODO Assumption is that the GetProcAddress function will have the same address in the target process as the one in the calling process. It
     // might be better not to do that.
@@ -48,7 +50,7 @@ BOOL InjectLibrary(HANDLE process, LPTSTR libraryPath) {
         goto FAILED;
     }
     
-    LPVOID libraryPathAddress = VirtualAllocEx(process, NULL, _tcslen(libraryPath) * sizeof(TCHAR), MEM_COMMIT, PAGE_READWRITE);
+    libraryPathAddress = VirtualAllocEx(process, NULL, _tcslen(libraryPath) * sizeof(TCHAR), MEM_COMMIT, PAGE_READWRITE);
 
     if (libraryPathAddress == NULL) {
         goto FAILED;
@@ -58,7 +60,7 @@ BOOL InjectLibrary(HANDLE process, LPTSTR libraryPath) {
         goto FAILED;
     }
 
-    HANDLE remoteThread = CreateRemoteThread(process, NULL, 0, (LPTHREAD_START_ROUTINE) loadLibraryAddress, libraryPathAddress, 0, NULL);
+    remoteThread = CreateRemoteThread(process, NULL, 0, (LPTHREAD_START_ROUTINE) loadLibraryAddress, libraryPathAddress, 0, NULL);
 
     if (remoteThread == NULL) {
         goto FAILED;
