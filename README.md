@@ -1,3 +1,4 @@
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/4018856d43944c13ae6c773c7fd15e89)](https://app.codacy.com/manual/serializingme/gpo-bypass?utm_source=github.com&utm_medium=referral&utm_content=serializingme/gpo-bypass&utm_campaign=Badge_Grade_Dashboard)
 [![Build Status](https://travis-ci.org/serializingme/gpo-bypass.svg?branch=master)](https://travis-ci.org/serializingme/gpo-bypass)
 
 # GPO Bypass
