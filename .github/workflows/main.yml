@@ -9,6 +9,7 @@ jobs:
   deploy:
     name: Build GPO-Bypass
     runs-on: ubuntu-18.04
+    container: ubuntu:18.04
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -18,7 +19,7 @@ jobs:
       - name: Install MinGW
         run: |
           apt update
-          apt -y install mingw-w64
+          apt -y install mingw-w64 make
 
       - name: Build Tool
         run: |
