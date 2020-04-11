@@ -1,0 +1,25 @@
+name: Main Jobs
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    name: Build GPO-Bypass
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Install MinGW
+        run: |
+          apt update
+          apt -y install mingw-w64
+
+      - name: Build Tool
+        run: |
+          make --jobs=2

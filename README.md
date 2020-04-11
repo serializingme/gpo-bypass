@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/serializingme/gpo-bypass.svg?branch=master)](https://travis-ci.org/serializingme/gpo-bypass)
+![Build Status](https://github.com/serializingme/gpo-bypass/workflows/Main/badge.svg)
 
 # GPO Bypass
 ## Introduction
